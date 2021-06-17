@@ -58,15 +58,16 @@ self.addEventListener("fetch", function(evt) {
   
       return;
     }
+    else { evt.respondWith(
+      fetch(evt.request).catch(function(){
+          return caches.match(evt.request).then(response => {
+              if (response) {return response}
+              else if (evt.request.headers.get("accept").includes("text/html")){ 
+                  return caches.match("/")
+          }
+          })
+      })
+    );}
 
-    evt.respondWith(
-        fetch(evt.request).catch(function(){
-            return caches.match(evt.request).then(response => {
-                if (response) {return response}
-                else if (evt.request.headers.get("accept").includes("text/html")){ 
-                    return caches.match("/")
-            }
-            })
-        })
-      );
+  
     });
