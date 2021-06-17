@@ -19,7 +19,7 @@ Starting the App:
 -run npm init and npm install
 -start the app with npm start 
 
-![Screenshot](./screenshot.PNG)
+![Screenshot](./Screenshot.PNG)
 
 Heroku: https://shrouded-plains-66738.herokuapp.com/
 *Note- the deplyed version of the app is not functional. I asked for assistance the teacher of my class and he also could not figure it out either but since it is fully functional when deployed locally he advised my to turn it in and put a note advising the grader of this.
